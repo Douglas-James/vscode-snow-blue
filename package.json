@@ -1,0 +1,22 @@
+{
+  "name": "vscode-snow-blue",
+  "displayName": "Vscode Snow-Blue",
+  "description": "vscode snow blue +color theme!",
+  "version": "0.0.1",
+  "publisher": "haileryle",
+  "engines": {
+    "vscode": "^1.107.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Vscode Snow-Blue",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Vscode Snow-Blue-color-theme.json"
+      }
+    ]
+  }
+}
