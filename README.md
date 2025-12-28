@@ -1,8 +1,12 @@
+<p align="center">
+  <img src="images/icon.png" alt="Snow-Blue Icon" width="128" />
+</p>
+
 # VS Code Snow-Blue
 
 **Snow-Blue** is a calm, low-glare dark theme (“Snow Throne” style) designed for long coding sessions with special focus on **HTML & CSS readability**.
 
-The goal is to feel Snow-blue, not harsh — easy on the eyes while keeping structure clear.
+The goal is to feel Snow-blue, not harsh easy on the eyes while keeping structure clear.
 
 ---
 

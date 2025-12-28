@@ -1,17 +1,32 @@
 {
   "name": "vscode-snow-blue",
   "displayName": "Vscode Snow-Blue",
-  "description": "vscode snow blue +color theme!",
-  "version": "0.0.1",
+  "description": "A calm snowy dark theme (Snow Throne) focused on HTML/CSS readability.",
+  "version": "1.0.1",
   "publisher": "haileryle",
+  "author": "haileryle",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#212529",
+    "theme": "dark"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Douglas-James/vscode-snow-blue"
   },
+  "bugs": {
+    "url": "https://github.com/Douglas-James/vscode-snow-blue/issues"
+  },
+  "homepage": "https://github.com/Douglas-James/vscode-snow-blue#readme",
   "keywords": [
     "theme",
+    "color theme",
     "dark theme",
-    "haileryle",
+    "css",
+    "html",
+    "snow",
+    "snow throne",
     "vscode-snow-blue"
   ],
   "engines": {

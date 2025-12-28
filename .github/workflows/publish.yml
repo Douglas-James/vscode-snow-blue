@@ -1,0 +1,65 @@
+name: VSCode Snow-Blue Extension
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check README exists and is updated
+        run: |
+          test -f README.md || (echo " README.md missing" && exit 1)
+
+          # Fail if README still contains the default VS Code template text
+          if grep -qi "Working with Markdown" README.md; then
+            echo "README.md still contains default template text. Update it."
+            exit 1
+          fi
+
+          echo " README looks updated."
+
+      - name: Check LICENSE exists
+        run: |
+          if [ ! -f LICENSE ] && [ ! -f LICENSE.md ] && [ ! -f LICENSE.txt ]; then
+            echo " LICENSE file missing (LICENSE / LICENSE.md / LICENSE.txt)."
+            exit 1
+          fi
+          echo " LICENSE exists."
+
+  publish:
+    needs: verify
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            echo "No package-lock.json found; skipping npm ci."
+          fi
+
+      - name: Install vsce
+        run: npm i -g @vscode/vsce
+
+      - name: Publish to VS Marketplace
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+        run: |
+          test -n "$VSCE_PAT" || (echo " VSCE_PAT secret not set" && exit 1)
+          vsce publish -p "$VSCE_PAT"

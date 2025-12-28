@@ -18,6 +18,18 @@
     "editor.lineHighlightBackground": "#f8f9fa08",
     "editorWhitespace.foreground": "#dee2e622",
 
+    "editorIndentGuide.background1": "#6c757d40",
+    "editorIndentGuide.activeBackground1": "#adb5bd70",
+
+    "editorOverviewRuler.border": "#00000000",
+
+    "editorGutter.addedBackground": "#1693DC",
+    "editorGutter.modifiedBackground": "#ED8A14",
+    "editorGutter.deletedBackground": "#D03846",
+
+    "textLink.foreground": "#1693DC",
+    "textLink.activeForeground": "#f8f9fa",
+
     "input.background": "#495057",
     "input.foreground": "#f8f9fa",
     "dropdown.background": "#495057",
@@ -47,7 +59,6 @@
       "scope": ["comment", "punctuation.definition.comment"],
       "settings": { "foreground": "#6c757d", "fontStyle": "italic" }
     },
-
     {
       "name": "Keywords",
       "scope": [
@@ -58,7 +69,6 @@
       ],
       "settings": { "foreground": "#ED8A14" }
     },
-
     {
       "name": "Functions",
       "scope": [
@@ -71,7 +81,6 @@
       ],
       "settings": { "foreground": "#D03846" }
     },
-
     {
       "name": "Variables",
       "scope": [
@@ -83,13 +92,11 @@
       ],
       "settings": { "foreground": "#e9ecef" }
     },
-
     {
       "name": "Strings (general)",
       "scope": ["string"],
       "settings": { "foreground": "#dee2e6" }
     },
-
     {
       "name": "Numbers & Constants",
       "scope": [
@@ -102,7 +109,6 @@
       ],
       "settings": { "foreground": "#1693DC" }
     },
-
     {
       "name": "Types & Classes (SAFE scopes only)",
       "scope": [
@@ -116,20 +122,16 @@
       ],
       "settings": { "foreground": "#1693DC" }
     },
-
     {
       "name": "Punctuation / Operators",
       "scope": ["punctuation", "keyword.operator", "punctuation.definition"],
       "settings": { "foreground": "#adb5bd" }
     },
-
     {
       "name": "Invalid / Errors",
       "scope": ["invalid", "invalid.illegal"],
       "settings": { "foreground": "#D03846" }
     },
-
-    /* ===== HTML readability ===== */
 
     {
       "name": "HTML Tag Names",
@@ -137,12 +139,12 @@
       "settings": { "foreground": "#f8f9fa", "fontStyle": "bold" }
     },
     {
-      "name": "HTML Attribute Names (charset, class, href...)",
+      "name": "HTML Attribute Names",
       "scope": ["entity.other.attribute-name.html"],
       "settings": { "foreground": "#adb5bd" }
     },
     {
-      "name": "HTML Attribute Values (\"UTF-8\", \"container\")",
+      "name": "HTML Attribute Values",
       "scope": [
         "meta.tag.attributes string.quoted.double.html",
         "meta.tag.attributes string.quoted.single.html"
@@ -158,8 +160,6 @@
       ],
       "settings": { "foreground": "#ED8A14" }
     },
-
-    /* ===== CSS readability ===== */
 
     {
       "name": "CSS Selectors (tag, .class, #id)",
@@ -194,8 +194,6 @@
       ],
       "settings": { "foreground": "#1693DC" }
     },
-
-    /* ===== Markdown (kept) ===== */
 
     {
       "name": "Markup - Headings",
