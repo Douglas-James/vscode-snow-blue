@@ -39,3 +39,4 @@ Snow-Blue uses a neutral ramp inspired by cold stone and snow:
 --gunmetal: #343a40;
 --carbon-black: #212529;
 ```
+[View the Snow-Blue extension and version history on the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=haileryle.vscode-snow-blue&ssr=false#version-history)

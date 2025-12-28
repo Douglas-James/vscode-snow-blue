@@ -1,9 +1,8 @@
 name: VSCode Snow-Blue Extension
 
 on:
-  release:
-    types: [published]
-
+  push:
+    branches: [main]
 permissions:
   contents: read
 
