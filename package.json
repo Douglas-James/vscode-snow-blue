@@ -4,6 +4,16 @@
   "description": "vscode snow blue +color theme!",
   "version": "0.0.1",
   "publisher": "haileryle",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Douglas-James/vscode-snow-blue"
+  },
+  "keywords": [
+    "theme",
+    "dark theme",
+    "haileryle",
+    "vscode-snow-blue"
+  ],
   "engines": {
     "vscode": "^1.107.0"
   },
