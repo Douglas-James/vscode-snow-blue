@@ -4,9 +4,54 @@
 
 # VS Code Snow-Blue
 
-**Snow-Blue** is a calm, low-glare dark theme (“Snow Throne” style) designed for long coding sessions with special focus on **HTML & CSS readability**.
+**Snow-Blue** is a calm, low-glare dark theme (“Snow Throne” style) built for long coding sessions with extra focus on **HTML, CSS, and JavaScript readability**.
 
-The goal is to feel Snow-blue, not harsh easy on the eyes while keeping structure clear.
+It’s snow-cool, not harsh — easy on the eyes while keeping structure clear.
+
+---
+
+## Install
+
+### Install from VS Code Marketplace (recommended)
+
+1. Open **VS Code**
+2. Go to **Extensions** (`Ctrl+Shift+X` / `Cmd+Shift+X`)
+3. Search for: **Vscode Snow-Blue**
+4. Click **Install**
+
+You can also view the Marketplace page here:  
+[Snow-Blue on the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=haileryle.vscode-snow-blue&ssr=false)
+
+---
+
+## Activate the Theme
+
+1. Open the Command Palette:
+   - `Ctrl+Shift+P` / `Cmd+Shift+P`
+2. Type: **Preferences: Color Theme**
+3. Select: **Vscode Snow-Blue**
+
+---
+
+## What’s Optimized
+
+### HTML readability
+
+- **Tag names** stand out clearly
+- **Attribute names** (ex: `charset`, `class`) are muted
+- **Attribute values** (ex: `"UTF-8"`) stay readable
+- `class="..."` values are visible but not screaming
+
+### CSS readability
+
+Clear scanning pattern:
+**selector → property → value**
+
+### JavaScript readability
+
+- Built-in APIs vs your custom functions are easier to separate
+- Function names / method calls / object properties have a clean hierarchy
+- Long sessions feel less “glare heavy”
 
 ---
 
@@ -14,13 +59,7 @@ The goal is to feel Snow-blue, not harsh easy on the eyes while keeping structur
 
 - Soft dark background (snowy dark, not pure black)
 - Reduced eye strain for long sessions
-- Clear visual hierarchy for web code:
-- **HTML tag names** stand out
-- **Attribute names** (e.g. `charset`, `class`) are muted
-- **Attribute values** (e.g. `"UTF-8"`) are brighter and readable
-- **Class names** inside `class="..."` are easy to spot
-- CSS reads clearly as:  
-  **selector → property → value**
+- Calm contrast for web development work (HTML/CSS/JS)
 - Clean Markdown styling for notes and learning
 
 ---
@@ -39,4 +78,3 @@ Snow-Blue uses a neutral ramp inspired by cold stone and snow:
 --gunmetal: #343a40;
 --carbon-black: #212529;
 ```
-[View the Snow-Blue extension and version history on the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=haileryle.vscode-snow-blue&ssr=false#version-history)

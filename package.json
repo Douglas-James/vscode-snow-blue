@@ -1,7 +1,7 @@
 {
   "name": "vscode-snow-blue",
   "displayName": "Vscode Snow-Blue",
-  "description": "A calm snowy dark theme (Snow Throne) focused on HTML/CSS readability.",
+  "description": "A calm snowy dark theme (Snow Throne) built for HTML, CSS, and JavaScript readability.",
   "version": "1.0.4",
   "publisher": "haileryle",
   "author": "haileryle",
@@ -23,8 +23,9 @@
     "theme",
     "color theme",
     "dark theme",
-    "css",
     "html",
+    "css",
+    "javascript",
     "snow",
     "snow throne",
     "vscode-snow-blue"
