@@ -3,6 +3,9 @@ name: VSCode Snow-Blue Extension
 on:
   push:
     branches: [main]
+  release:
+    types: [published]
+
 permissions:
   contents: read
 
@@ -15,25 +18,25 @@ jobs:
 
       - name: Check README exists and is updated
         run: |
-          test -f README.md || (echo " README.md missing" && exit 1)
+          test -f README.md || (echo "README.md missing" && exit 1)
 
-          # Fail if README still contains the default VS Code template text
           if grep -qi "Working with Markdown" README.md; then
             echo "README.md still contains default template text. Update it."
             exit 1
           fi
 
-          echo " README looks updated."
+          echo "README looks updated."
 
       - name: Check LICENSE exists
         run: |
           if [ ! -f LICENSE ] && [ ! -f LICENSE.md ] && [ ! -f LICENSE.txt ]; then
-            echo " LICENSE file missing (LICENSE / LICENSE.md / LICENSE.txt)."
+            echo "LICENSE file missing (LICENSE / LICENSE.md / LICENSE.txt)."
             exit 1
           fi
-          echo " LICENSE exists."
+          echo "LICENSE exists."
 
   publish:
+    if: github.event_name == 'release'
     needs: verify
     runs-on: ubuntu-latest
     steps:
@@ -60,5 +63,5 @@ jobs:
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
         run: |
-          test -n "$VSCE_PAT" || (echo " VSCE_PAT secret not set" && exit 1)
+          test -n "$VSCE_PAT" || (echo "VSCE_PAT secret not set" && exit 1)
           vsce publish -p "$VSCE_PAT"
