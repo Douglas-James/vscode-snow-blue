@@ -1,0 +1,285 @@
+{
+  "name": "Christmas Night",
+  "$schema": "vscode://schemas/color-theme",
+  "type": "dark",
+  "colors": {
+    "editor.background": "#1a1f23",
+    "editor.foreground": "#e9ecef",
+    "sideBar.background": "#0d1117",
+    "activityBar.background": "#0d1117",
+    "panel.background": "#0d1117",
+    "editorLineNumber.foreground": "#6c757d",
+    "editorLineNumber.activeForeground": "#f8b229",
+    "editorCursor.foreground": "#f8b229",
+    "editor.selectionBackground": "#146b3a44",
+    "editor.lineHighlightBackground": "#f8b22911",
+    "editorWhitespace.foreground": "#ffffff11",
+    "editorIndentGuide.background1": "#6c757d33",
+    "editorIndentGuide.activeBackground1": "#f8b22955",
+    "editorOverviewRuler.border": "#00000000",
+    "editorGutter.addedBackground": "#146b3a",
+    "editorGutter.modifiedBackground": "#f8b229",
+    "editorGutter.deletedBackground": "#ea4630",
+    "textLink.foreground": "#ffae00",
+    "textLink.activeForeground": "#f8b229",
+    "input.background": "#21262d",
+    "input.foreground": "#e9ecef",
+    "input.border": "#30363d",
+    "dropdown.background": "#21262d",
+    "dropdown.border": "#30363d",
+    "editorWidget.background": "#0d1117",
+    "editorWidget.border": "#30363d",
+    "editorSuggestWidget.background": "#0d1117",
+    "editorSuggestWidget.border": "#30363d",
+    "editorHoverWidget.background": "#0d1117",
+    "editorHoverWidget.border": "#30363d",
+    "tab.activeBackground": "#1a1f23",
+    "tab.inactiveBackground": "#0d1117",
+    "tab.activeForeground": "#f8b229",
+    "tab.inactiveForeground": "#8b949e",
+    "tab.border": "#21262d",
+    "statusBar.background": "#0d1117",
+    "statusBar.foreground": "#e9ecef",
+    "focusBorder": "#f8b229",
+    "editorBracketMatch.background": "#f8b22922",
+    "editorBracketMatch.border": "#f8b229aa"
+  },
+  "tokenColors": [
+    {
+      "name": "Comments",
+      "scope": ["comment", "punctuation.definition.comment"],
+      "settings": { "foreground": "#8b949e", "fontStyle": "italic" }
+    },
+    {
+      "name": "Strings",
+      "scope": ["string", "string.quoted", "string.template"],
+      "settings": { "foreground": "#ffffff" }
+    },
+    {
+      "name": "Numbers & Constants",
+      "scope": [
+        "constant.numeric",
+        "constant.language",
+        "constant.character",
+        "constant.escape",
+        "support.constant",
+        "keyword.other.unit"
+      ],
+      "settings": { "foreground": "#ffae00" }
+    },
+    {
+      "name": "Punctuation / Operators",
+      "scope": ["punctuation", "keyword.operator", "punctuation.definition"],
+      "settings": { "foreground": "#d0d7de" }
+    },
+    {
+      "name": "Invalid / Errors",
+      "scope": ["invalid", "invalid.illegal"],
+      "settings": { "foreground": "#ff6058" }
+    },
+    {
+      "name": "JS Keywords (Christmas Green)",
+      "scope": [
+        "keyword",
+        "storage.type",
+        "storage.modifier",
+        "keyword.control",
+        "keyword.operator.new",
+        "keyword.operator.expression",
+        "keyword.operator.ternary"
+      ],
+      "settings": { "foreground": "#146b3a" }
+    },
+    {
+      "name": "Built-in / Globals (Gold)",
+      "scope": [
+        "support.class.builtin",
+        "support.type.builtin",
+        "support.function",
+        "support.function.builtin",
+        "support.variable",
+        "variable.language",
+        "constant.language"
+      ],
+      "settings": { "foreground": "#f8b229" }
+    },
+    {
+      "name": "Function Names (Cinnabar Red)",
+      "scope": [
+        "entity.name.function",
+        "meta.function entity.name.function",
+        "meta.function-call entity.name.function",
+        "entity.name.function.js",
+        "entity.name.function.ts",
+        "entity.name.function.jsx",
+        "entity.name.function.tsx"
+      ],
+      "settings": { "foreground": "#ea4630" }
+    },
+    {
+      "name": "Method Calls / Member Functions (Floral Purple)",
+      "scope": [
+        "meta.method-call",
+        "meta.function-call",
+        "variable.function",
+        "entity.name.method",
+        "entity.name.method.js",
+        "entity.name.method.ts"
+      ],
+      "settings": { "foreground": "#af7aff" }
+    },
+    {
+      "name": "Variables (General)",
+      "scope": [
+        "variable",
+        "variable.other.readwrite",
+        "variable.other.constant"
+      ],
+      "settings": { "foreground": "#ffffff" }
+    },
+    {
+      "name": "Parameters (Chinese Yellow)",
+      "scope": ["variable.parameter", "meta.function.parameters variable"],
+      "settings": { "foreground": "#ffae00" }
+    },
+    {
+      "name": "Object Properties (Floral Purple)",
+      "scope": [
+        "variable.other.property",
+        "meta.object-literal.key",
+        "support.type.property-name",
+        "meta.member.expression variable.other.property"
+      ],
+      "settings": { "foreground": "#af7aff" }
+    },
+    {
+      "name": "Classes / Types (Orange-Yellow)",
+      "scope": [
+        "entity.name.type.class",
+        "entity.name.class",
+        "support.class",
+        "support.type",
+        "entity.name.type",
+        "entity.name.namespace"
+      ],
+      "settings": { "foreground": "#f8b229", "fontStyle": "bold" }
+    },
+    {
+      "name": "HTML Content Text",
+      "scope": ["text.html.basic"],
+      "settings": { "foreground": "#e9ecef" }
+    },
+    {
+      "name": "HTML Tag Brackets",
+      "scope": [
+        "punctuation.definition.tag",
+        "punctuation.definition.tag.begin.html",
+        "punctuation.definition.tag.end.html"
+      ],
+      "settings": { "foreground": "#8b949e" }
+    },
+    {
+      "name": "HTML Tag Names (Firebrick Red)",
+      "scope": ["entity.name.tag.html"],
+      "settings": { "foreground": "#bb2528", "fontStyle": "bold" }
+    },
+    {
+      "name": "HTML Attribute Names (Dark Green)",
+      "scope": ["entity.other.attribute-name.html"],
+      "settings": { "foreground": "#146b3a" }
+    },
+    {
+      "name": "HTML Attribute Values (White)",
+      "scope": ["string.quoted.double.html", "string.quoted.single.html"],
+      "settings": { "foreground": "#ffffff" }
+    },
+    {
+      "name": "HTML Class Attribute Values (Christmas Green)",
+      "scope": [
+        "meta.attribute.class.html string.quoted.double.html",
+        "meta.attribute.class.html string.quoted.single.html"
+      ],
+      "settings": { "foreground": "#146b3a" }
+    },
+    {
+      "name": "CSS Selectors (Cinnabar)",
+      "scope": [
+        "entity.name.tag.css",
+        "entity.other.attribute-name.class.css",
+        "entity.other.attribute-name.id.css",
+        "entity.other.attribute-name.pseudo-class.css",
+        "entity.other.attribute-name.pseudo-element.css"
+      ],
+      "settings": { "foreground": "#ea4630" }
+    },
+    {
+      "name": "CSS Property Names (Floral Purple)",
+      "scope": [
+        "support.type.property-name.css",
+        "support.type.property-name.scss",
+        "support.type.property-name.sass",
+        "support.type.property-name.less"
+      ],
+      "settings": { "foreground": "#af7aff" }
+    },
+    {
+      "name": "CSS Values & Units (Chinese Yellow)",
+      "scope": [
+        "constant.numeric.css",
+        "keyword.other.unit.css",
+        "support.constant.color.css",
+        "constant.other.color.hex.css",
+        "constant.other.color.rgb-value.css",
+        "constant.other.color.hsl-value.css"
+      ],
+      "settings": { "foreground": "#ffae00" }
+    },
+    {
+      "name": "CSS At-rules (Christmas Green)",
+      "scope": ["keyword.control.at-rule.css", "keyword.control.at-rule.scss"],
+      "settings": { "foreground": "#146b3a" }
+    },
+    {
+      "name": "Markup - Headings (Cinnabar)",
+      "scope": [
+        "markdown.heading",
+        "markup.heading",
+        "entity.name.section.markdown"
+      ],
+      "settings": { "foreground": "#ea4630", "fontStyle": "bold" }
+    },
+    {
+      "name": "Markup - Bold (Firebrick)",
+      "scope": ["markup.bold", "markup.bold.markdown"],
+      "settings": { "foreground": "#bb2528", "fontStyle": "bold" }
+    },
+    {
+      "name": "Markup - Italic (Christmas Green)",
+      "scope": ["markup.italic", "markup.italic.markdown"],
+      "settings": { "foreground": "#146b3a", "fontStyle": "italic" }
+    },
+    {
+      "name": "Markup - Quote",
+      "scope": [
+        "markup.quote",
+        "markup.quote punctuation.definition.blockquote.markdown"
+      ],
+      "settings": { "foreground": "#8b949e", "fontStyle": "italic" }
+    },
+    {
+      "name": "Markup - Raw",
+      "scope": [
+        "markup.inline.raw.string.markdown",
+        "markup.raw.block",
+        "markup.fenced_code.block.markdown",
+        "text.html.markdown markup.inline.raw.markdown"
+      ],
+      "settings": { "foreground": "#f8b229" }
+    },
+    {
+      "name": "Links",
+      "scope": ["*url*", "*link*", "*uri*"],
+      "settings": { "fontStyle": "underline", "foreground": "#af7aff" }
+    }
+  ]
+}

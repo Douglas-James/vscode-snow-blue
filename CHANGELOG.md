@@ -7,6 +7,32 @@ and uses [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.2.0] – 2024-12-30
+
+### Added
+
+- 🎄 **Christmas Day**: New festive light theme with traditional Christmas colors
+- 🌙 **Christmas Night**: New festive dark theme optimized for nighttime coding
+- Christmas color palette featuring:
+  - Cinnabar Red (#EA4630)
+  - Firebrick (#BB2528)
+  - Christmas Green (#146B3A)
+  - Orange-Yellow (#F8B229)
+  - Cal-Poly-Pomona-Green (#165B33)
+  - Chinese Yellow (#FFAE00)
+  - Floral Lavender (#AF7AFF)
+  - Sunset Orange (#FF6058)
+- Three-theme bundle: Original Snow-Blue + two seasonal variants
+- Updated documentation with all three themes
+
+### Improved
+
+- Extended theme collection for different coding preferences
+- Added light theme option for daytime coding
+- Enhanced holiday coding experience
+
+---
+
 ## [1.0.4] – 2025-01-28
 
 ### Added
@@ -43,4 +69,5 @@ and uses [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 - Ongoing tuning for contrast and accessibility
-- Seasonal accent experiments (winter / holiday variants)
+- Potential additional seasonal variants
+- Community feedback integration

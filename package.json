@@ -1,8 +1,8 @@
 {
   "name": "vscode-snow-blue",
-  "displayName": "Vscode Snow-Blue",
-  "description": "A calm snowy dark theme (Snow Throne) built for HTML, CSS, and JavaScript readability.",
-  "version": "1.1.0",
+  "displayName": "Vscode Snow-Blue & Cartoon Christmas",
+  "description": "A calm snowy dark theme (Snow Throne) built for HTML, CSS, and JavaScript readability. Cartoon Christmas Color SchemeThe Cartoon Christmas Color Scheme has 4 colors, which are Sunset Orange (#FF6058), White (#FFFFFF), Chinese Yellow (#FFAE00) and Floral Lavender (#AF7AFF).",
+  "version": "1.1.1",
   "publisher": "haileryle",
   "author": "haileryle",
   "license": "MIT",
@@ -39,9 +39,19 @@
   "contributes": {
     "themes": [
       {
-        "label": "Vscode Snow-Blue",
+        "label": "Vscode Snow Blue",
         "uiTheme": "vs-dark",
         "path": "./themes/Vscode Snow-Blue-color-theme.json"
+      },
+      {
+        "label": "Christmas Day",
+        "uiTheme": "vs",
+        "path": "./themes/Vscode christmas-day-theme.json"
+      },
+      {
+        "label": "Christmas Night",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Vscode christmas-night-theme.json"
       }
     ]
   }

@@ -35,6 +35,25 @@ jobs:
           fi
           echo "LICENSE exists."
 
+      - name: Verify theme files exist
+        run: |
+          test -f themes/Vscode\ Snow-Blue-color-theme.json || (echo "Snow-Blue theme missing" && exit 1)
+          test -f themes/Vscode\ christmas-day-theme.json || (echo "Christmas Day theme missing" && exit 1)
+          test -f themes/Vscode\ christmas-night-theme.json || (echo "Christmas Night theme missing" && exit 1)
+          echo "All theme files present."
+
+      - name: Validate JSON syntax
+        run: |
+          # Check package.json
+          cat package.json | python3 -m json.tool > /dev/null || (echo "package.json has invalid JSON" && exit 1)
+
+          # Check theme files
+          cat themes/Vscode\ Snow-Blue-color-theme.json | python3 -m json.tool > /dev/null || (echo "Snow-Blue theme has invalid JSON" && exit 1)
+          cat themes/Vscode\ christmas-day-theme.json | python3 -m json.tool > /dev/null || (echo "Christmas Day theme has invalid JSON" && exit 1)
+          cat themes/Vscode\ christmas-night-theme.json | python3 -m json.tool > /dev/null || (echo "Christmas Night theme has invalid JSON" && exit 1)
+
+          echo "All JSON files are valid."
+
   publish:
     if: github.event_name == 'release'
     needs: verify
@@ -59,9 +78,19 @@ jobs:
       - name: Install vsce
         run: npm i -g @vscode/vsce
 
+      - name: Package extension
+        run: vsce package
+
       - name: Publish to VS Marketplace
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
         run: |
           test -n "$VSCE_PAT" || (echo "VSCE_PAT secret not set" && exit 1)
           vsce publish -p "$VSCE_PAT"
+
+      - name: Upload VSIX artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: vscode-snow-blue-extension
+          path: "*.vsix"
+          retention-days: 30
