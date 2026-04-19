@@ -44,6 +44,7 @@ const THEMES = [
     "Christmas Day",
 ];
 let panel;
+const IS_BETA = true;
 function activate(context) {
     const switchTheme = vscode.commands.registerCommand("snowthrone.switchTheme", async () => {
         const selected = await vscode.window.showQuickPick(THEMES, {
@@ -54,39 +55,42 @@ function activate(context) {
         await vscode.workspace
             .getConfiguration()
             .update("workbench.colorTheme", selected, vscode.ConfigurationTarget.Global);
-        if (!panel) {
-            panel = (0, previewPanel_1.createPreviewPanel)();
-            registerWebviewMessages(panel);
-        }
-        else {
-            panel.reveal(vscode.ViewColumn.Two);
-        }
+        openPanel();
         panel.webview.postMessage({
             type: "themeChanged",
             theme: selected,
         });
     });
     const openPreview = vscode.commands.registerCommand("snowthrone.openPreview", () => {
-        if (!panel) {
-            panel = (0, previewPanel_1.createPreviewPanel)();
-            registerWebviewMessages(panel);
-        }
-        else {
-            panel.reveal(vscode.ViewColumn.Two);
-        }
+        openPanel();
     });
     context.subscriptions.push(switchTheme, openPreview);
 }
-function registerWebviewMessages(panel) {
+function openPanel() {
+    if (!panel) {
+        panel = (0, previewPanel_1.createPreviewPanel)(IS_BETA);
+        registerMessages(panel);
+    }
+    else {
+        panel.reveal(vscode.ViewColumn.Two);
+    }
+}
+function registerMessages(panel) {
     panel.webview.onDidReceiveMessage(async (msg) => {
+        const config = vscode.workspace.getConfiguration();
         if (msg.type === "updateColor") {
-            const config = vscode.workspace.getConfiguration();
             const current = config.get("workbench.colorCustomizations") ||
                 {};
             await config.update("workbench.colorCustomizations", {
                 ...current,
                 [msg.key]: msg.value,
             }, vscode.ConfigurationTarget.Global);
+        }
+        if (msg.type === "resetTheme") {
+            await config.update("workbench.colorCustomizations", undefined, vscode.ConfigurationTarget.Global);
+            panel.webview.postMessage({
+                type: "themeReset",
+            });
         }
     });
 }
