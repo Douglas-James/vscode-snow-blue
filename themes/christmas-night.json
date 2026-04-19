@@ -1,0 +1,25 @@
+{
+  "name": "Christmas Night",
+  "type": "dark",
+  "colors": {
+    "editor.background": "#1a1f23",
+    "editor.foreground": "#e9ecef",
+    "activityBar.background": "#0d1117",
+    "editorCursor.foreground": "#f8b229",
+    "statusBar.background": "#0d1117"
+  },
+  "tokenColors": [
+    {
+      "scope": ["keyword"],
+      "settings": { "foreground": "#146b3a" }
+    },
+    {
+      "scope": ["string"],
+      "settings": { "foreground": "#ffffff" }
+    },
+    {
+      "scope": ["function"],
+      "settings": { "foreground": "#ea4630" }
+    }
+  ]
+}

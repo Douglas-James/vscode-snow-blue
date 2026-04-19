@@ -1,0 +1,26 @@
+{
+  "name": "Snow Blue (Default)",
+  "type": "dark",
+  "colors": {
+    "editor.background": "#343a40",
+    "editor.foreground": "#e9ecef",
+    "activityBar.background": "#212529",
+    "sideBar.background": "#212529",
+    "panel.background": "#212529",
+    "editorCursor.foreground": "#78C0F0"
+  },
+  "tokenColors": [
+    {
+      "scope": ["comment"],
+      "settings": { "foreground": "#6c757d", "fontStyle": "italic" }
+    },
+    {
+      "scope": ["keyword"],
+      "settings": { "foreground": "#22C55E" }
+    },
+    {
+      "scope": ["string"],
+      "settings": { "foreground": "#D8F0FF" }
+    }
+  ]
+}

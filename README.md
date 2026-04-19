@@ -1,162 +1,177 @@
 <p align="center">
-  <img src="images/icon.png" alt="Snow-Blue Icon" width="128" />
+  <img src="images/icon.png" alt="Snow Blue Icon" width="128" />
 </p>
 
-# VS Code Snow-Blue & Christmas Themes
+# VS Code Snow Blue & Slate Amber Themes
 
-**Snow-Blue** is a calm, low-glare dark theme ("Snow Throne" style) built for long coding sessions with extra focus on **HTML, CSS, and JavaScript readability**.
+**Snow Blue** is a calm, low-glare theme system designed for long coding sessions with a strong focus on **HTML, CSS, and JavaScript readability**.
 
-Now includes **festive Christmas themes** with rich, warm colors perfect for the holiday season! 🎄
+It now includes a **premium Slate Amber Night theme** built using a 60–30–10 color system, along with festive Christmas themes for seasonal coding comfort. 🎄
 
----
-
-## Available Themes
-
-### 🌨️ Vscode Snow Blue (Original)
-
-A calm, snowy dark theme — easy on the eyes while keeping structure clear. Perfect for long coding sessions.
-
-### ☀️ Christmas Day (New!)
-
-A warm, festive **light theme** featuring traditional Christmas colors:
-
-- **Cinnabar Red** (#EA4630)
-- **Firebrick** (#BB2528)
-- **Christmas Green** (#146B3A)
-- **Golden Yellow** (#F8B229)
-- **Floral Purple** (#AF7AFF)
-
-Optimized for daytime coding with excellent contrast and readability.
-
-### 🌙 Christmas Night (New!)
-
-A cozy **dark theme** with the same festive Christmas palette, optimized for nighttime coding sessions. Features brighter accents that pop against the dark background while remaining comfortable on the eyes.
+It also includes a built-in **Snow Throne Theme Studio preview system** for live theme customization inside VS Code.
 
 ---
 
-## Install
+## 🎥 Live Preview
 
-### Install from VS Code Marketplace (recommended)
+<p align="center">
+  <img src="images/demo.png" width="900" />
+</p>
+
+---
+
+## 🎨 Available Themes
+
+### 🌙 Slate Amber Night (Premium Default)
+
+A modern, high-contrast dark theme built using a **60–30–10 color system**:
+
+- Deep slate background for reduced eye strain
+- Blue-gray structure layers for UI clarity
+- Warm amber accents for focus and highlights
+
+---
+
+### ❄️ Snow Blue (Default)
+
+A calm snow-inspired dark theme focused on clean structure and readability.
+
+- Soft dark background (not pure black)
+- Clear syntax hierarchy for web development
+- Reduced visual fatigue during long sessions
+
+---
+
+### 🎄 Christmas Night (Festive Dark Theme)
+
+A cozy dark theme optimized for nighttime coding.
+
+- Warm festive accents on a dark base
+- Strong contrast without harsh glare
+- Comfortable for long evening coding sessions
+
+---
+
+### ☀️ Christmas Day (Festive Light Theme)
+
+A bright festive light theme designed for daytime use.
+
+- High readability in bright environments
+- Traditional Christmas palette
+- Clean UI structure with warm accents
+
+---
+
+## ⚡ Snow Throne Theme Studio (Live Preview)
+
+This extension includes a built-in **Theme Studio system**:
+
+- 🎛 Live color editor (background, accent, text)
+- ⚡ Instant preview updates inside VS Code
+- 🧊 Button & card component preview system
+- 🔄 Real-time theme switching sync
+- 💾 Saves changes using VS Code `workbench.colorCustomizations`
+
+### Open Theme Studio
+
+`Ctrl+Shift+P` → **Snow Throne: Open Preview**
+
+---
+
+## 📦 Installation
+
+### Install from VS Code Marketplace (Recommended)
 
 1. Open **VS Code**
-2. Go to **Extensions** (`Ctrl+Shift+X` / `Cmd+Shift+X`)
-3. Search for: **Vscode Snow-Blue**
+2. Go to **Extensions** (`Ctrl+Shift+X`)
+3. Search: **Vscode Snow Blue**
 4. Click **Install**
 
-You can also view the Marketplace page here:  
-[Snow-Blue on the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=haileryle.vscode-snow-blue&ssr=false)
+Marketplace:
+https://marketplace.visualstudio.com/items?itemName=haileryle.vscode-snow-blue
 
 ---
 
-## Activate a Theme
+## ⚡ Usage
 
-1. Open the Command Palette:
-   - `Ctrl+Shift+P` / `Cmd+Shift+P`
-2. Type: **Preferences: Color Theme**
-3. Select your preferred theme:
-   - **Vscode Snow Blue** (original dark)
-   - **Christmas Day** (festive light)
-   - **Christmas Night** (festive dark)
+### 🎨 Switch Theme
 
-**Quick Switch:** `Ctrl+K Ctrl+T` / `Cmd+K Cmd+T`
+`Ctrl+Shift+P` → **Snow Throne: Switch Theme**
 
----
+### 🎛 Open Theme Studio
 
-## What's Optimized
+`Ctrl+Shift+P` → **Snow Throne: Open Preview**
 
-### HTML readability
+### 🎨 VS Code Theme Picker
 
-- **Tag names** stand out clearly
-- **Attribute names** (ex: `charset`, `class`) are muted
-- **Attribute values** (ex: `"UTF-8"`) stay readable
-- `class="..."` values are visible but not screaming
-
-### CSS readability
-
-Clear scanning pattern:
-**selector → property → value**
-
-### JavaScript readability
-
-- Built-in APIs vs your custom functions are easier to separate
-- Function names / method calls / object properties have a clean hierarchy
-- Long sessions feel less "glare heavy"
+`Ctrl+K Ctrl+T`
 
 ---
 
-## Features
+## 🧠 Design System
 
-- **Three distinct themes** for different moods and times of day
-- Soft backgrounds (not pure black or white)
-- Reduced eye strain for long sessions
-- Calm contrast for web development work (HTML/CSS/JS)
-- Clean Markdown styling for notes and learning
-- Festive Christmas themes with traditional holiday colors
+Built using a **60–30–10 color rule**:
+
+- 60% Base: deep slate backgrounds
+- 30% Structure: UI separation layers
+- 10% Accent: amber, ice blue, festive highlights
+
+This ensures:
+
+- Low eye strain
+- Clear hierarchy
+- Consistent UI behavior
 
 ---
 
-## Color Palettes
+## ⚡ Features
 
-### Snow-Blue (Original)
+- 🌙 Premium Slate Amber Night theme
+- ❄️ Snow Blue clean dark theme
+- 🎄 Christmas Night & Day themes
+- 🎛 Live Theme Studio (color editor)
+- ⚡ Real-time preview system
+- 🧊 UI component preview system
+- 🧠 Long-session readability optimized
+- 💾 VS Code settings integration
 
-Snow-Blue uses a neutral ramp inspired by cold stone and snow:
+---
+
+## 🎨 Color Palettes
+
+### Slate Amber Night
+
+```css
+--slate-900: #0f172a;
+--slate-800: #1e293b;
+--slate-700: #334155;
+--amber: #f59e0b;
+--text: #e2e8f0;
+```
 
 ```css
 --bright-snow: #f8f9fa;
 --platinum: #e9ecef;
---alabaster: #dee2e6;
---pale-slate: #ced4da;
---slate: #6c757d;
---iron: #495057;
 --gunmetal: #343a40;
 --carbon-black: #212529;
+--ice-blue: #78c0f0;
 ```
 
-### Christmas Themes
-
-Both Christmas themes feature a festive palette:
+### 🎄 Christmas
 
 ```css
-/* Christmas Color Palette */
---Cinnabar: #ea4630;
---Firebrick: #bb2528;
---Orange-Yellow: #f8b229;
---Dark-Spring-Green: #146b3a;
---Cal-Poly-Pomona-Green: #165b33;
---Sunset-Orange: #ff6058;
---White: #ffffff;
---Chinese-Yellow: #ffae00;
---Floral-Lavender: #af7aff;
+--cinnabar: #ea4630;
+--firebrick: #bb2528;
+--orange-yellow: #f8b229;
+--dark-green: #146b3a;
+--deep-green: #165b33;
+--white: #ffffff;
 ```
 
 ---
 
-### Snow-Blue (Original Dark Theme)
+## 📄 License
 
-_Your existing screenshot here_
-
-### Christmas Day (Light Theme)
-
-_Add screenshot of light theme here_
-
-### Christmas Night (Dark Theme)
-
-_Add screenshot of dark theme here_
-
-## Changelog
-
-### v1.2.0
-
-- ✨ Added **Christmas Day** light theme
-- ✨ Added **Christmas Night** dark theme
-- 🎨 Introduced festive Christmas color palette
-- 📝 Updated documentation
-
-### v1.1.1
-
-- Initial release of Snow-Blue theme
-- Optimized for HTML, CSS, and JavaScript
-
----
-
-**Enjoy coding with Snow-Blue! 🌨️ Happy holidays! 🎄**
+This project uses a custom Educational Use license.
+Commercial use is not permitted without written permission.
+See [LICENSE](./LICENSE) for full details.

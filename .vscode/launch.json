@@ -1,17 +1,49 @@
-// A launch configuration that launches the extension inside a new window
-// Use IntelliSense to learn about possible attributes.
-// Hover to view descriptions of existing attributes.
-// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
 {
-	"version": "0.2.0",
-	"configurations": [
-		{
-			"name": "Extension",
-			"type": "extensionHost",
-			"request": "launch",
-			"args": [
-				"--extensionDevelopmentPath=${workspaceFolder}"
-			]
-		}
-	]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "🌨 Snow Blue",
+      "type": "extensionHost",
+      "request": "launch",
+      "preLaunchTask": "watch",
+      "outFiles": ["${workspaceFolder}/out/**/*.js"],
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}",
+        "--force-color-theme=Snow Blue (Default)"
+      ]
+    },
+    {
+      "name": "🌙 Slate Amber Night",
+      "type": "extensionHost",
+      "request": "launch",
+      "preLaunchTask": "watch",
+      "outFiles": ["${workspaceFolder}/out/**/*.js"],
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}",
+        "--force-color-theme=Slate Amber Night (Premium Default)"
+      ]
+    },
+    {
+      "name": "🎄 Christmas Night",
+      "type": "extensionHost",
+      "request": "launch",
+      "preLaunchTask": "watch",
+      "outFiles": ["${workspaceFolder}/out/**/*.js"],
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}",
+        "--force-color-theme=Christmas Night"
+      ]
+    },
+    {
+      "name": "☀️ Christmas Day",
+      "type": "extensionHost",
+      "request": "launch",
+      "preLaunchTask": "watch",
+      "outFiles": ["${workspaceFolder}/out/**/*.js"],
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}",
+        "--force-color-theme=Christmas Day"
+      ]
+    }
+  ]
 }

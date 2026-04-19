@@ -1,58 +1,84 @@
 {
   "name": "vscode-snow-blue",
-  "displayName": "Vscode Snow-Blue & Cartoon Christmas",
-  "description": "A calm snowy dark theme (Snow Throne) built for HTML, CSS, and JavaScript readability. Cartoon Christmas Color SchemeThe Cartoon Christmas Color Scheme has 4 colors, which are Sunset Orange (#FF6058), White (#FFFFFF), Chinese Yellow (#FFAE00) and Floral Lavender (#AF7AFF).",
-  "version": "2.0.0",
+  "displayName": "Snow-Blue & Seasonal Themes",
+  "description": "A calm, low-glare theme system for long coding sessions. Includes Snow Blue, Slate Amber Night, Christmas Night, and Christmas Day themes.",
+  "version": "2.1.0",
   "publisher": "haileryle",
-  "author": "haileryle",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "icon": "images/icon.png",
-  "galleryBanner": {
-    "color": "#212529",
-    "theme": "dark"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Douglas-James/vscode-snow-blue"
+    "url": "https://github.com/haileryle/vscode-snow-blue"
   },
   "bugs": {
-    "url": "https://github.com/Douglas-James/vscode-snow-blue/issues"
+    "url": "https://github.com/haileryle/vscode-snow-blue/issues"
   },
-  "homepage": "https://github.com/Douglas-James/vscode-snow-blue#readme",
+  "homepage": "https://marketplace.visualstudio.com/items?itemName=haileryle.vscode-snow-blue",
   "keywords": [
     "theme",
     "color theme",
     "dark theme",
-    "html",
-    "css",
-    "javascript",
     "snow",
-    "snow throne",
-    "vscode-snow-blue"
+    "christmas",
+    "amber",
+    "slate"
   ],
   "engines": {
-    "vscode": "^1.107.0"
+    "vscode": "^1.80.0"
   },
   "categories": [
     "Themes"
   ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "contributes": {
-    "themes": [
+    "commands": [
       {
-        "label": "Vscode Snow Blue",
-        "uiTheme": "vs-dark",
-        "path": "./themes/Vscode Snow-Blue-color-theme.json"
+        "command": "snowthrone.switchTheme",
+        "title": "Snow Throne: Switch Theme"
       },
       {
-        "label": "Christmas Day",
-        "uiTheme": "vs",
-        "path": "./themes/Vscode christmas-day-theme.json"
+        "command": "snowthrone.openPreview",
+        "title": "Snow Throne: Open Preview"
+      }
+    ],
+    "themes": [
+      {
+        "label": "Snow Blue (Default)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/snow-blue.json"
+      },
+      {
+        "label": "Slate Amber Night (Premium Default)",
+        "uiTheme": "vs-dark",
+        "path": "./themes/slate-amber-night.json"
       },
       {
         "label": "Christmas Night",
         "uiTheme": "vs-dark",
-        "path": "./themes/Vscode christmas-night-theme.json"
+        "path": "./themes/christmas-night.json"
+      },
+      {
+        "label": "Christmas Day",
+        "uiTheme": "vs",
+        "path": "./themes/christmas-day.json"
       }
     ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "node ./out/test/runTest.js",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@vscode/test-electron": "^2.3.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "puppeteer": "^24.41.0"
   }
 }

@@ -7,60 +7,14 @@ on:
     types: [published]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   verify:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Check README exists and is updated
-        run: |
-          test -f README.md || (echo "README.md missing" && exit 1)
-
-          if grep -qi "Working with Markdown" README.md; then
-            echo "README.md still contains default template text. Update it."
-            exit 1
-          fi
-
-          echo "README looks updated."
-
-      - name: Check LICENSE exists
-        run: |
-          if [ ! -f LICENSE ] && [ ! -f LICENSE.md ] && [ ! -f LICENSE.txt ]; then
-            echo "LICENSE file missing (LICENSE / LICENSE.md / LICENSE.txt)."
-            exit 1
-          fi
-          echo "LICENSE exists."
-
-      - name: Verify theme files exist
-        run: |
-          test -f themes/Vscode\ Snow-Blue-color-theme.json || (echo "Snow-Blue theme missing" && exit 1)
-          test -f themes/Vscode\ christmas-day-theme.json || (echo "Christmas Day theme missing" && exit 1)
-          test -f themes/Vscode\ christmas-night-theme.json || (echo "Christmas Night theme missing" && exit 1)
-          echo "All theme files present."
-
-      - name: Validate JSON syntax
-        run: |
-          # Check package.json
-          cat package.json | python3 -m json.tool > /dev/null || (echo "package.json has invalid JSON" && exit 1)
-
-          # Check theme files
-          cat themes/Vscode\ Snow-Blue-color-theme.json | python3 -m json.tool > /dev/null || (echo "Snow-Blue theme has invalid JSON" && exit 1)
-          cat themes/Vscode\ christmas-day-theme.json | python3 -m json.tool > /dev/null || (echo "Christmas Day theme has invalid JSON" && exit 1)
-          cat themes/Vscode\ christmas-night-theme.json | python3 -m json.tool > /dev/null || (echo "Christmas Night theme has invalid JSON" && exit 1)
-
-          echo "All JSON files are valid."
-
-  publish:
-    if: github.event_name == 'release'
-    needs: verify
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -68,15 +22,88 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
+        run: npm install
+
+      - name: Check required files
         run: |
-          if [ -f package-lock.json ]; then
-            npm ci
-          else
-            echo "No package-lock.json found; skipping npm ci."
-          fi
+          test -f README.md
+          test -f LICENSE
+          test -f images/icon.png
+
+      - name: Compile extension
+        run: npm run compile
+
+      - name: Generate preview HTML (multi-theme)
+        run: node scripts/build-previews.js
+
+      - name: Install Puppeteer
+        run: npm install puppeteer
+
+      - name: Take screenshots
+        run: node scripts/screenshot.js
+
+      - name: Upload preview images (artifact)
+        uses: actions/upload-artifact@v4
+        with:
+          name: preview-images
+          path: images/*.png
+
+  bump-version:
+    if: github.event_name == 'release'
+    needs: verify
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set version from tag
+        run: |
+          VERSION=${GITHUB_REF_NAME#v}
+          npm version $VERSION --no-git-tag-version
+
+      - name: Commit version bump
+        run: |
+          git add package.json package-lock.json || true
+          git diff --staged --quiet && echo "No changes" && exit 0
+          git commit -m "chore: bump version ${{ github.ref_name }}"
+          git push origin main
+
+  publish:
+    if: github.event_name == 'release'
+    needs: bump-version
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Compile extension
+        run: npm run compile
 
       - name: Install vsce
-        run: npm i -g @vscode/vsce
+        run: npm install -g @vscode/vsce
 
       - name: Package extension
         run: vsce package
@@ -85,12 +112,11 @@ jobs:
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
         run: |
-          test -n "$VSCE_PAT" || (echo "VSCE_PAT secret not set" && exit 1)
+          test -n "$VSCE_PAT" || (echo "Missing VSCE_PAT secret" && exit 1)
           vsce publish -p "$VSCE_PAT"
 
       - name: Upload VSIX artifact
         uses: actions/upload-artifact@v4
         with:
-          name: vscode-snow-blue-extension
+          name: snow-blue-extension
           path: "*.vsix"
-          retention-days: 30
