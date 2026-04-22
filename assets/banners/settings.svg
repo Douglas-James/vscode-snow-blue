@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="settingsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4da6ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d7ec0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer gear teeth -->
+  <g fill="url(#settingsGradient)">
+    <!-- Top tooth -->
+    <rect x="110" y="10" width="36" height="30" rx="4"/>
+    <!-- Top-right tooth -->
+    <rect x="180" y="35" width="30" height="36" rx="4" transform="rotate(45 195 53)"/>
+    <!-- Right tooth -->
+    <rect x="216" y="110" width="30" height="36" rx="4"/>
+    <!-- Bottom-right tooth -->
+    <rect x="180" y="185" width="30" height="36" rx="4" transform="rotate(45 195 203)"/>
+    <!-- Bottom tooth -->
+    <rect x="110" y="216" width="36" height="30" rx="4"/>
+    <!-- Bottom-left tooth -->
+    <rect x="46" y="185" width="30" height="36" rx="4" transform="rotate(45 61 203)"/>
+    <!-- Left tooth -->
+    <rect x="10" y="110" width="30" height="36" rx="4"/>
+    <!-- Top-left tooth -->
+    <rect x="46" y="35" width="30" height="36" rx="4" transform="rotate(45 61 53)"/>
+  </g>
+
+  <!-- Center circle (background) -->
+  <circle cx="128" cy="128" r="60" fill="#0a1628"/>
+
+  <!-- Inner circle with center dot -->
+  <circle cx="128" cy="128" r="50" fill="url(#settingsGradient)" opacity="0.9"/>
+  <circle cx="128" cy="128" r="35" fill="#0a1628"/>
+
+  <!-- Center dot -->
+  <circle cx="128" cy="128" r="12" fill="url(#settingsGradient)"/>
+</svg>

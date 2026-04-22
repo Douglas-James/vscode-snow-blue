@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a3a4a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4da6ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d7ec0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="url(#bgGradient)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="80" fill="#4da6ff" opacity="0.1"/>
+  <circle cx="1180" cy="540" r="120" fill="#4da6ff" opacity="0.15"/>
+
+  <!-- Main content area -->
+  <g>
+    <!-- Left accent bar -->
+    <rect x="0" y="0" width="8" height="640" fill="url(#accentGradient)"/>
+
+    <!-- Title -->
+    <text x="640" y="220" font-family="Arial, sans-serif" font-size="72" font-weight="bold" text-anchor="middle" fill="#ffffff">
+      Snow Blue
+    </text>
+
+    <!-- Subtitle -->
+    <text x="640" y="300" font-family="Arial, sans-serif" font-size="48" text-anchor="middle" fill="#4da6ff">
+      Theme Studio
+    </text>
+
+    <!-- Description -->
+    <text x="640" y="370" font-family="Arial, sans-serif" font-size="32" text-anchor="middle" fill="#b3d9ff" opacity="0.9">
+      Beautiful VS Code Color Themes
+    </text>
+
+    <!-- Bottom tagline -->
+    <text x="640" y="550" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="#7faed9" opacity="0.8">
+      Create • Customize • Share Your Perfect Theme
+    </text>
+  </g>
+
+  <!-- Corner accent -->
+  <rect x="1272" y="632" width="8" height="8" fill="#4da6ff" opacity="0.6"/>
+</svg>

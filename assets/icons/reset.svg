@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="resetGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4da6ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d7ec0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main circular arrow path -->
+  <g fill="none" stroke="url(#resetGradient)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Arc circle -->
+    <path d="M 220 128 A 92 92 0 0 0 50 128" />
+  </g>
+
+  <!-- Arrow head pointing up-right -->
+  <g fill="url(#resetGradient)">
+    <!-- Arrow point -->
+    <polygon points="220,128 195,90 215,108"/>
+
+    <!-- Decorative accent -->
+    <circle cx="220" cy="128" r="8" opacity="0.6"/>
+  </g>
+
+  <!-- Center circle for visual anchor -->
+  <circle cx="128" cy="128" r="35" fill="url(#resetGradient)" opacity="0.15"/>
+</svg>

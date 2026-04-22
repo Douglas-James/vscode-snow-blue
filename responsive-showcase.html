@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snow Studio - Responsive Theme Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0b1220 0%, #1a1e2e 100%);
+            color: #e0e0e0;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #4da6ff 0%, #48dbfb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #a0a0a0;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        @media (min-width: 1200px) {
+            .showcase-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .device-frame {
+            perspective: 1000px;
+        }
+
+        .device-label {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #4da6ff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .device-specs {
+            text-align: center;
+            font-size: 0.9em;
+            color: #7a8a9a;
+            margin-bottom: 15px;
+        }
+
+        /* Desktop Frame */
+        .desktop-frame {
+            border: 20px solid #16191e;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            background: #0b1220;
+            aspect-ratio: 16/9;
+        }
+
+        /* Laptop Frame */
+        .laptop-frame {
+            border: 15px solid #16191e;
+            border-radius: 8px 8px 0 0;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            background: #0b1220;
+            aspect-ratio: 16/10;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .laptop-bottom {
+            height: 30px;
+            background: linear-gradient(to bottom, #1a1e2e, #0f1318);
+            border-top: 1px solid #2a3448;
+        }
+
+        .laptop-notch {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            height: 25px;
+            background: #1a1e2e;
+            border-radius: 0 0 20px 20px;
+            border: 2px solid #16191e;
+            border-top: none;
+        }
+
+        /* iPhone Frame */
+        .iphone-frame {
+            border: 12px solid #1a1a1a;
+            border-radius: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            background: #0b1220;
+            aspect-ratio: 9/19.5;
+            position: relative;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        .iphone-notch {
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 170px;
+            height: 27px;
+            background: #000;
+            border-radius: 0 0 30px 30px;
+            z-index: 10;
+        }
+
+        .iphone-status-bar {
+            height: 44px;
+            background: #0b1220;
+            border-bottom: 1px solid rgba(77, 166, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            font-size: 0.9em;
+            color: #e0e0e0;
+        }
+
+        .screen-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            background: #0b1220;
+        }
+
+        /* Viewport common styles */
+        .viewport {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            padding: 20px;
+            gap: 15px;
+        }
+
+        .viewport-bar {
+            display: flex;
+            gap: 10px;
+            height: 40px;
+            background: #0f172a;
+            border-radius: 6px;
+            padding: 8px;
+        }
+
+        .bar-button {
+            flex: 1;
+            background: #1e293b;
+            border: 1px solid rgba(77, 166, 255, 0.2);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .bar-button:hover {
+            background: #264f78;
+            border-color: #4da6ff;
+        }
+
+        .content-block {
+            background: #1e293b;
+            border: 1px solid rgba(77, 166, 255, 0.1);
+            border-radius: 6px;
+            padding: 12px;
+            flex: 1;
+        }
+
+        .content-line {
+            height: 8px;
+            background: rgba(77, 166, 255, 0.3);
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .content-line:last-child {
+            margin-bottom: 0;
+        }
+
+        .content-line.short {
+            width: 60%;
+        }
+
+        .theme-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            margin: 40px 0;
+        }
+
+        .color-swatch {
+            aspect-ratio: 1;
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 8px;
+            font-size: 0.75em;
+            color: #fff;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+            font-weight: 600;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(77, 166, 255, 0.05);
+            border: 1px solid rgba(77, 166, 255, 0.1);
+            border-radius: 12px;
+        }
+
+        .feature-card {
+            padding: 20px;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(77, 166, 255, 0.15);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            background: rgba(30, 41, 59, 0.8);
+            border-color: #4da6ff;
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #4da6ff;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .feature-card p {
+            color: #a0a0a0;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid rgba(77, 166, 255, 0.1);
+            color: #7a8a9a;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .header h1 {
+                font-size: 2.2em;
+            }
+
+            .showcase-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .device-frame {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .header p {
+                font-size: 1em;
+            }
+
+            body {
+                padding: 20px 10px;
+            }
+
+            .desktop-frame,
+            .laptop-frame {
+                aspect-ratio: auto;
+                min-height: 300px;
+            }
+
+            .iphone-frame {
+                min-height: 600px;
+                max-width: 100%;
+            }
+
+            .theme-preview {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>❄️ Snow Studio Theme</h1>
+            <p>Responsive Design Showcase</p>
+        </div>
+
+        <div class="showcase-grid">
+            <!-- Desktop -->
+            <div class="device-frame">
+                <div class="device-label">🖥️ Desktop</div>
+                <div class="device-specs">2560 × 1440</div>
+                <div class="desktop-frame">
+                    <div class="screen-content">
+                        <div
+                            style="background: #0f172a; padding: 15px; border-bottom: 1px solid rgba(77, 166, 255, 0.1); display: flex; gap: 20px;">
+                            <div
+                                style="width: 40%; height: 30px; background: rgba(77, 166, 255, 0.2); border-radius: 4px;">
+                            </div>
+                            <div
+                                style="width: 30%; height: 30px; background: rgba(77, 166, 255, 0.1); border-radius: 4px;">
+                            </div>
+                        </div>
+                        <div class="viewport">
+                            <div class="viewport-bar">
+                                <div class="bar-button"></div>
+                                <div class="bar-button"></div>
+                                <div class="bar-button"></div>
+                            </div>
+                            <div class="content-block">
+                                <div class="content-line"></div>
+                                <div class="content-line short"></div>
+                            </div>
+                            <div class="content-block">
+                                <div class="content-line"></div>
+                                <div class="content-line"></div>
+                                <div class="content-line short"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Laptop -->
+            <div class="device-frame">
+                <div class="device-label">💻 Laptop</div>
+                <div class="device-specs">1920 × 1080</div>
+                <div class="laptop-frame">
+                    <div class="screen-content">
+                        <div
+                            style="background: #0f172a; padding: 12px; border-bottom: 1px solid rgba(77, 166, 255, 0.1); display: flex; gap: 15px; font-size: 0.9em;">
+                            <div
+                                style="width: 35%; height: 25px; background: rgba(77, 166, 255, 0.2); border-radius: 3px;">
+                            </div>
+                            <div
+                                style="width: 25%; height: 25px; background: rgba(77, 166, 255, 0.1); border-radius: 3px;">
+                            </div>
+                        </div>
+                        <div class="viewport">
+                            <div class="viewport-bar">
+                                <div class="bar-button"></div>
+                                <div class="bar-button"></div>
+                            </div>
+                            <div class="content-block">
+                                <div class="content-line"></div>
+                                <div class="content-line short"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="laptop-notch"></div>
+                </div>
+                <div class="laptop-bottom"></div>
+            </div>
+
+            <!-- iPhone -->
+            <div class="device-frame">
+                <div class="device-label">📱 iPhone</div>
+                <div class="device-specs">390 × 844</div>
+                <div class="iphone-frame">
+                    <div class="iphone-notch"></div>
+                    <div class="screen-content">
+                        <div class="iphone-status-bar">
+                            <span>9:41</span>
+                            <span>●●●●●</span>
+                        </div>
+                        <div class="viewport">
+                            <div class="viewport-bar">
+                                <div class="bar-button"></div>
+                                <div class="bar-button"></div>
+                            </div>
+                            <div class="content-block">
+                                <div class="content-line"></div>
+                                <div class="content-line short"></div>
+                            </div>
+                            <div class="content-block">
+                                <div class="content-line"></div>
+                                <div class="content-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin: 80px 0; text-align: center;">
+            <h2 style="font-size: 2em; margin-bottom: 30px; color: #4da6ff;">Theme Color Palette</h2>
+            <div class="theme-preview">
+                <div class="color-swatch" style="background: #0b1220;">Primary</div>
+                <div class="color-swatch" style="background: #1e293b;">Secondary</div>
+                <div class="color-swatch" style="background: #4da6ff;">Accent</div>
+                <div class="color-swatch" style="background: #48dbfb;">Cyan</div>
+                <div class="color-swatch" style="background: #22c55e;">Success</div>
+                <div class="color-swatch" style="background: #ef4444;">Error</div>
+                <div class="color-swatch" style="background: #e0e0e0; color: #0b1220;">Text</div>
+                <div class="color-swatch" style="background: #4a5568; color: #e0e0e0;">Muted</div>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>✨ Modern Design</h3>
+                <p>Clean and contemporary aesthetic with smooth gradients and soft shadows for a polished look.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎨 Color Harmony</h3>
+                <p>Carefully curated color palette with cool blues and crisp whites for reduced eye strain.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📱 Fully Responsive</h3>
+                <p>Seamless experience across desktop, laptop, tablet, and mobile devices with adaptive layouts.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🌙 Dark Mode</h3>
+                <p>Optimized for low-light environments with carefully balanced contrast ratios.</p>
+            </div>
+            <div class="feature-card">
+                <h3>⚡ Performance</h3>
+                <p>Lightweight theme with minimal resource usage for blazing-fast code editing.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔧 Customizable</h3>
+                <p>Easily customize colors, syntax highlighting, and UI elements to match your preferences.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>❄️ Snow Studio Theme — Crafted for VS Code | Made with attention to detail and user experience</p>
+        </div>
+    </div>
+</body>
+
+</html>

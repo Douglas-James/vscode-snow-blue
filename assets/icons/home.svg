@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="homeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4da6ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d7ec0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b9d;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#feca57;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#48dbfb;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer circle background -->
+  <circle cx="128" cy="128" r="128" fill="#0a1628"/>
+
+  <!-- Main home structure -->
+  <g>
+    <!-- House body -->
+    <rect x="50" y="100" width="156" height="120" fill="url(#homeGradient)" opacity="0.15" rx="8"/>
+    <rect x="50" y="100" width="156" height="120" fill="none" stroke="url(#homeGradient)" stroke-width="8" rx="8"/>
+
+    <!-- Roof -->
+    <polygon points="128,40 50,100 206,100" fill="url(#homeGradient)" opacity="0.6"/>
+    <polygon points="128,40 50,100 206,100" fill="none" stroke="url(#homeGradient)" stroke-width="6"/>
+
+    <!-- Door -->
+    <rect x="105" y="140" width="46" height="80" fill="url(#accentGradient)" opacity="0.4" rx="4"/>
+    <rect x="105" y="140" width="46" height="80" fill="none" stroke="url(#accentGradient)" stroke-width="4" rx="4"/>
+    <circle cx="145" cy="180" r="4" fill="url(#accentGradient)" opacity="0.8"/>
+
+    <!-- Window left -->
+    <rect x="65" y="115" width="28" height="28" fill="url(#accentGradient)" opacity="0.3" rx="3"/>
+    <line x1="79" y1="115" x2="79" y2="143" stroke="url(#accentGradient)" stroke-width="2" opacity="0.6"/>
+    <line x1="65" y1="129" x2="93" y2="129" stroke="url(#accentGradient)" stroke-width="2" opacity="0.6"/>
+
+    <!-- Window right -->
+    <rect x="163" y="115" width="28" height="28" fill="url(#accentGradient)" opacity="0.3" rx="3"/>
+    <line x1="177" y1="115" x2="177" y2="143" stroke="url(#accentGradient)" stroke-width="2" opacity="0.6"/>
+    <line x1="163" y1="129" x2="191" y2="129" stroke="url(#accentGradient)" stroke-width="2" opacity="0.6"/>
+  </g>
+
+  <!-- Top accent glow -->
+  <circle cx="128" cy="40" r="12" fill="url(#homeGradient)" opacity="0.5"/>
+</svg>
